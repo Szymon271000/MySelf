@@ -4,9 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
 </head>
 <body>
-    
+    <form onsubmit="init()">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Enter your name">
+            <div id="nameError" class="text-danger"></div>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" placeholder="Give your email"/>
+            <div id="emailError" class="text-danger"></div>
+        </div>
+        <div>
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment"></textarea>
+            <div id="commentError" class="text-danger"></div>
+        </div>
+        <button id="formBtn" type="submit" disabled>Submit</button>
+    </form>
 </body>
 </html>
+
+<script>
+    function init()
+    {
+        let inputNames = ["name", "email", "comment"]
+        inputNames.forEach(x => document.getElementById(x).addEventListener("input", validate));
+    }
+
+    function validateFields(fieldId, errorId, fieldName, fieldLen, regex)
+    {
+        let errorElement = document.getElementById(errorId);
+        errorElement.innerHTML = "";
+
+        let name = document.getElementById(fieldId).value;
+        let status = true;
+        if(name == null || name == "")
+        {
+            errorElement.innerHTML = fieldName + " is required";
+            status = false;
+        }
+        else if(name.length > fieldLen)
+        {
+            errorElement.innerHTML = fieldName + " is too long";
+            status = false;
+        }
+        else if(!regex.test(name))
+        {
+            errorElement.innerHTML = fieldName + " has invalid format";
+            status = false;
+        }
+        return status;
+    }
+
+    function validate()
+    {
+        var correctName = validateFields("name", "nameError", "Name", 20,  /^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/);
+        var correctEmail = validateFields("email", "emailError", "Email", 100,  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        if(correctEmail && correctName)
+        {
+            document.getElementById("formBtn").disabled = false;
+        }
+        else
+        {
+            document.getElementById("formBtn").disabled = true;
+        }
+    }
+    init();
+</script>
