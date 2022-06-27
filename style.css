@@ -65,6 +65,8 @@ nav a:before{
 nav a:hover::before{
     width: 100%;
 }
+
+
 .background-image{
     display: flex;
     align-items: center;
@@ -89,3 +91,39 @@ nav a:hover::before{
     font-style: oblique;
 }
 
+.stages p{
+    color: #32a852;
+    padding-top: 30px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.section{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    width: 60% ;
+    margin: 10rem auto 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+    .section img { width: 200px;}
+    .section { display:block }
+}
+.section img{
+    height: 250px;
+}
+
+.section h1{
+    margin: 0;
+    color: greenyellow;
+}
+
+.section p{
+    color: black;
+    margin-right: 15px;
+}
+
+.text p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
