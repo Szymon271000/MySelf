@@ -106,6 +106,7 @@ nav a:hover::before{
     margin: 10rem auto 0 auto;
 }
 
+
 @media screen and (max-width: 480px) {
     .section img { width: 200px;}
     .section { display:block }
@@ -127,3 +128,41 @@ nav a:hover::before{
 .text p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.Thoughts h1,p{
+    text-align: center;
+}
+
+.Thoughts p{
+    padding-top: 20px;
+}
+
+.TitleForRules{
+    padding-bottom: 30px;
+}
+.Rules{
+    background-color: wheat;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 30px;
+}
+
+.Rules p {
+    --h: 1.2em;
+    line-height: var(--h);
+    color: #0000;
+    text-shadow: 
+      0 var(--_t,var(--h)) #fff,
+      0 0 var(--_c, #000);
+    background: 
+      linear-gradient(#1095c1 0 0) 
+      bottom/100% var(--_d, 0) no-repeat;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .Rules p:hover {
+    --_d: 100%;
+    --_t: 0;
+    --_c: #0000;
+  }
