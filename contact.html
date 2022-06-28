@@ -7,25 +7,65 @@
     <link rel="stylesheet" href="style.css">
     <title>Contact</title>
 </head>
-<body>
-    <form onsubmit="init()">
-        <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Enter your name">
-            <div id="nameError" class="text-danger"></div>
+<body class="contactBody">
+    <header>
+        <div class="container">
+            <label class="logo">MYSELF</label>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hobby.html">Hobbies</a></li>
+                <li><a href="love.html">Love</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
         </div>
-        <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" placeholder="Give your email"/>
-            <div id="emailError" class="text-danger"></div>
-        </div>
-        <div>
-            <label for="comment">Comment</label>
-            <textarea id="comment" name="comment"></textarea>
-            <div id="commentError" class="text-danger"></div>
-        </div>
-        <button id="formBtn" type="submit" disabled>Submit</button>
-    </form>
+    </header>
+    <div class="contactInputcontainer">   
+        <form class="contactForm" onsubmit="init()">
+            <ul class="flex-outer">
+                <li>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" placeholder="Enter your name">
+                    <p id="nameError" class="text-danger"></p>
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" placeholder="Give your email"/>
+                    <p id="emailError" class="text-danger"></p>
+                </li>
+                <li>
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment"></textarea>
+                    <p id="commentError" class="text-danger"></p>
+                </li>
+                <li>
+                    <button id="formBtn" type="submit" disabled>Submit</button>
+                </li>
+            </ul>
+        </form> 
+    </div>
+            <!-- <form class="contactForm" onsubmit="init()">
+                <div class="itemInput">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" placeholder="Enter your name">
+                    <div id="nameError" class="text-danger"></div>
+                </div>
+                <div class="itemInput">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" placeholder="Give your email"/>
+                    <div id="emailError" class="text-danger"></div>
+                </div>
+                <div class="itemInput">
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment"></textarea>
+                    <div id="commentError" class="text-danger"></div>
+                </div>
+                <button id="formBtn" type="submit" disabled>Submit</button>
+            </form> -->
+        
 </body>
 </html>
 
@@ -65,6 +105,7 @@
     {
         var correctName = validateFields("name", "nameError", "Name", 20,  /^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/);
         var correctEmail = validateFields("email", "emailError", "Email", 100,  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        var correctComment = validateFields("comment", "commentError", "Comment", 100, /^[A-Za-z0-9 -]*$/);
         if(correctEmail && correctName)
         {
             document.getElementById("formBtn").disabled = false;
