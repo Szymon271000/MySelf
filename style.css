@@ -292,3 +292,57 @@ nav a:hover::before{
     border-radius: 2px;
   }
   
+  /* .carousel-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+  } */
+
+  .loveGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  }
+
+  .img-wrapper{
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-wrapper > img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .img-wrapper > .PhotoLoveDescription{
+    position: absolute;
+    inset: 0;
+    font-size: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-wrapper > img,
+  .img-wrapper > .PhotoLoveDescription{
+    transition: 200ms ease-in-out;
+  }
+
+.img-wrapper:hover> img.blur{
+  filter: blur(5px);
+}
+
+.img-wrapper > .PhotoLoveDescription.fade{
+  opacity: 0;
+}
+
+.img-wrapper:hover > .PhotoLoveDescription.fade{
+  opacity: 1;
+}
