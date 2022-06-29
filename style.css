@@ -402,3 +402,64 @@ nav a:hover::before{
 .gallery-image:hover img{
   transform: scale(1.2);
 }
+
+.projects-gallery{
+  width: 1000px;
+  height: 400px;
+  background: #ccc;
+  margin: 120px auto;
+  display: flex;
+}
+
+.col{
+  height: 100%;
+  flex:1;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 25px;
+  position: relative;
+  transition: 0.6s;
+}
+
+.col:nth-child(1){
+  background: #283491;
+}
+
+.col:nth-child(2){
+  background: #f18684;
+}
+
+.col:nth-child(3){
+  background: #6ee2f1;
+}
+h2{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+.caption{
+  max-width: 230px;
+  font-size: 20px;
+  margin: 28px 0;
+  display: none;
+}
+
+.col img{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.col:hover{
+  flex-grow: 2.5;
+}
+
+.col:hover .caption{
+  display: block;
+}
+
+.col:hover{
+  text-align: left;
+}
