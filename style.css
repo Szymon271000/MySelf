@@ -338,11 +338,23 @@ nav a:hover::before{
 }
 
 .gallery-container{
-  max-width: 700px;
-  margin: 16px 0;
+  padding-top: 50px;
+  display: grid;
+  flex-direction:column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
 }
 
+.gallery-images{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+}
 .active-image{
+  padding-top: 20px;
   height: 400px;
   margin-bottom: 8px;
   position: relative;
