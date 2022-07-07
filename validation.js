@@ -34,7 +34,7 @@ function init()
         var correctName = validateFields("name", "nameError", "Name", 20,  /^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/);
         var correctEmail = validateFields("email", "emailError", "Email", 100,  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
         var correctComment = validateFields("comment", "commentError", "Comment", 100, /^[A-Za-z0-9 -]*$/);
-        if(correctEmail && correctName)
+        if(correctEmail && correctName && correctComment)
         {
             document.getElementById("formBtn").disabled = false;
         }
